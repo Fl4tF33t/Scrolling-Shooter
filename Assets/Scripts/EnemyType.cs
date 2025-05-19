@@ -1,0 +1,10 @@
+﻿using UnityEngine;
+
+namespace ScrollShooter {
+    [CreateAssetMenu(fileName = "Enemy", menuName = "ScrtiptableObjects/Enemy")]
+    public class EnemyType : ScriptableObject {
+        public GameObject enemyPrefab;
+        public GameObject weaponPrefab;
+        public float speed;
+    }
+}
