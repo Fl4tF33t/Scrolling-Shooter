@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
+using Random = UnityEngine.Random;
 
 namespace ScrollShooter {
     public class EnemySpawner : MonoBehaviour {
@@ -13,6 +15,8 @@ namespace ScrollShooter {
 
         private float spawnTimer;
         private int enemiesSpawned;
+
+        private Transform foo;
 
         private void OnValidate() {
             splineContainers = new List<SplineContainer>(GetComponentsInChildren<SplineContainer>());

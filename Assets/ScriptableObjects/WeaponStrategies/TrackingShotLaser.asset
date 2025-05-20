@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543ca270677d49268551fe3b6be80b9c, type: 3}
+  m_Name: TrackingShotLaser
+  m_EditorClassIdentifier: 
+  damage: 10
+  fireRate: 5
+  projectileSpeed: 2
+  projectileLifeTime: 5
+  projectilePrefab: {fileID: 1786677401135420418, guid: 9dc75c120c824d64a990de5275c06400, type: 3}
+  trackingSpeed: 1

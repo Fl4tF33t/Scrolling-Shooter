@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b822f47c552749e6833dc12a13fcd0dc, type: 3}
+  m_Name: SingleShotLaser
+  m_EditorClassIdentifier: 
+  damage: 10
+  fireRate: 1.7
+  projectileSpeed: 10
+  projectileLifeTime: 4
+  projectilePrefab: {fileID: 1786677401135420418, guid: 9dc75c120c824d64a990de5275c06400, type: 3}
