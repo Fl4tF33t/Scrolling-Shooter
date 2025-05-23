@@ -5,6 +5,7 @@ using UnityEngine;
 namespace ScrollShooter
 {
     public class Boss : MonoBehaviour {
+        [SerializeField] private Transform destroyVfx;
         [SerializeField] private float maxHealth = 100f;
         private float health;
 
@@ -20,12 +21,6 @@ namespace ScrollShooter
         private void Start() {
             health = maxHealth;
             bossCollider.enabled = true;
-            
-            foreach (BossStage stage in stages) {
-                foreach (EnemyPlane enemyPlane in stage.enemySystems) {
-                    enemyPlane.OnSystemDestroyed.AddListener(CheckStageComplete);
-                }
-            }
             
             InitializeStage();
         }
@@ -48,6 +43,11 @@ namespace ScrollShooter
         private void InitializeStage() {
             stages[currentStage].InitializeStage();
             bossCollider.enabled = !stages[currentStage].isBossInvulnerable;
+            foreach (BossStage stage in stages) {
+                foreach (EnemyPlane enemyPlane in stage.enemySystems) {
+                    enemyPlane.OnSystemDestroyed.AddListener(CheckStageComplete);
+                }
+            }
         }
 
         private void OnCollisionEnter(Collision other) {
@@ -58,7 +58,8 @@ namespace ScrollShooter
         }
 
         private void BossDefeated() {
-            
+            Instantiate(destroyVfx, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }

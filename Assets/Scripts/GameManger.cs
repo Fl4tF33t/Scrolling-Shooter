@@ -9,11 +9,13 @@ namespace ScrollShooter {
         private PlayerPlane playerPlane;
         private int score;
         private float restartTimer = 3f;
+        private Boss boss;
         
         private void Awake() {
             Instance = this;
             
             playerPlane = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlane>();
+            boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>();
         }
         private void Update() {
             if (IsGameOver()) {
@@ -27,7 +29,7 @@ namespace ScrollShooter {
             }
         }
         
-        public bool IsGameOver() => playerPlane.GetHealthNormalized() <= 0 || playerPlane.GetFuelNormalized() <= 0;
+        public bool IsGameOver() => playerPlane.GetHealthNormalized() <= 0 || playerPlane.GetFuelNormalized() <= 0 || boss.GetHealthNormalized() <= 0;
         public void AddScore(int score) => this.score += score;
         public int GetScore() => score;
 
